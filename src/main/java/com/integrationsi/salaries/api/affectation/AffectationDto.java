@@ -2,16 +2,18 @@ package com.integrationsi.salaries.api.affectation;
 
 import java.time.LocalDate;
 
+import com.integrationsi.salaries.api.common.CodeLibelle;
+
 public record AffectationDto(
         Long id,
         Long salarieId,
         LocalDate dateDebut,
         LocalDate dateFin,
-        String societe,
-        String etablissement,
-        String direction,
-        String service,
+        CodeLibelle societe,
+        CodeLibelle etablissement,
+        CodeLibelle direction,
+        CodeLibelle service,
         String poste,
-        String centreCout
+        CodeLibelle centreCout
 ) {
 }

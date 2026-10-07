@@ -1,6 +1,8 @@
 package com.integrationsi.salaries.api.coordonnees;
 
 
+import com.integrationsi.salaries.api.common.CodeLibelle;
+
 public record CoordonneesDto(
         Long id,
         Long salarieId,
@@ -8,7 +10,7 @@ public record CoordonneesDto(
         String adresse2,
         String codePostal,
         String ville,
-        String pays,
+        CodeLibelle pays,
         String telephone,
         String emailPersonnel
 ) {
