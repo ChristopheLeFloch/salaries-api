@@ -1,18 +1,18 @@
-package com.integrationsi.salaries.api.contrat;
+package com.integrationsi.salaries.api.remuneration;
 
 import java.time.LocalDate;
 import java.math.BigDecimal;
 
 import com.integrationsi.salaries.api.common.CodeLibelle;
 
-public record ContratDto(
+public record RemunerationDto(
         Long id,
         Long salarieId,
-        CodeLibelle typeContrat,
+        CodeLibelle typeRemuneration,
         LocalDate dateDebut,
         LocalDate dateFin,
-        BigDecimal tempsTravailHebdomadaire,
-        BigDecimal tauxActivite,
-        CodeLibelle devise
+        BigDecimal montant,
+        CodeLibelle devise,
+        CodeLibelle periodicite
 ) {
 }
