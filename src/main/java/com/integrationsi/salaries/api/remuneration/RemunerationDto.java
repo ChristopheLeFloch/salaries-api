@@ -8,11 +8,9 @@ import com.integrationsi.salaries.api.common.CodeLibelle;
 public record RemunerationDto(
         Long id,
         Long salarieId,
-        CodeLibelle typeRemuneration,
         LocalDate dateDebut,
         LocalDate dateFin,
-        BigDecimal montant,
-        CodeLibelle devise,
-        CodeLibelle periodicite
+        BigDecimal montantMensuel,
+        CodeLibelle devise
 ) {
 }
