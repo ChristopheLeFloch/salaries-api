@@ -1,7 +1,9 @@
 package com.integrationsi.salaries.api.carriere;
 
+import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +24,13 @@ public interface CarriereClient {
 
     @GetExchange
     List<CarriereDto> findBySalarieId(@RequestParam("salarieId") Long salarieId);
+
+    /** Lignes qui chevauchent [du, au] ; passer null à un filtre pour l'ignorer. */
+    @GetExchange
+    List<CarriereDto> findByPeriode(
+            @RequestParam("du") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate du,
+            @RequestParam("au") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate au,
+            @RequestParam(value = "salarieId", required = false) Long salarieId);
 
     @PostExchange
     CarriereDto create(@RequestBody CarriereDto carriere);
